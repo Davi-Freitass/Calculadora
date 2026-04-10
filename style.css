@@ -35,7 +35,9 @@
     margin-top: 25px;
     border-radius: 10px;
     margin-bottom: 15px;
-    
+    text-align: center;
+    font-size: 50px;
+
 }
 
 .botoes_numeros {
@@ -47,8 +49,6 @@
     background-color: whitesmoke;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
 
 }
 
