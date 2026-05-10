@@ -12,22 +12,36 @@ document.getElementById("n8").onclick = () => tela.innerText += "8";
 document.getElementById("n9").onclick = () => tela.innerText += "9";
 document.getElementById("n0").onclick = () => tela.innerText += "0";
 
-// simbolos
+// símbolos
 document.getElementById("mais").onclick = () => tela.innerText += "+";
 document.getElementById("menos").onclick = () => tela.innerText += "-";
 document.getElementById("x").onclick = () => tela.innerText += "*";
 document.getElementById("divide").onclick = () => tela.innerText += "/";
 
-// apaga
 document.getElementById("apaga").onclick = () => {
     tela.innerText = tela.innerText.slice(0, -1);
 };
 
-// igual
 document.getElementById("igual").onclick = () => {
+
+    if (tela.innerText.trim() === "") {
+        tela.innerText = "Campo vazio";
+        return;
+    }
+
+    if (tela.innerText.includes("/0")) {
+        tela.innerText = "Não pode dividir por zero";
+        return;
+    }
+
+    if (!/^[0-9+\-*/.() ]+$/.test(tela.innerText)) {
+        tela.innerText = "Digite apenas números";
+        return;
+    }
+
     try {
         tela.innerText = eval(tela.innerText);
     } catch {
-        tela.innerText = "Deu erro";
+        tela.innerText = "Conta inválida";
     }
 };
