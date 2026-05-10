@@ -34,11 +34,6 @@ document.getElementById("igual").onclick = () => {
         return;
     }
 
-    if (!/^[0-9+\-*/.() ]+$/.test(tela.innerText)) {
-        tela.innerText = "Digite apenas números";
-        return;
-    }
-
     try {
         tela.innerText = eval(tela.innerText);
     } catch {
